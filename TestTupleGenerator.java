@@ -78,9 +78,32 @@ public class TestTupleGenerator
             } // for
         } // for
         
-
         out.println( "Student Table: " + " Number of tuples :" + size);
         out.println();
+        //student table
+        
+        
+       
+        //Course Table
+        String [] tableCourse = { "Course"};
+        int sizeofCourses = 2000;
+        int tupC[] = new int[]{sizeofCourses};
+        Comparable[][][] resultofCourseSelect = test.generate(tupC);
+        
+        
+        Table courseTable = new Table("Course_Table", "crsCode deptId crsName descry", "String String String String", "crsCode");
+        for (int i = 0; i < resultofCourseSelect.length; i++) {
+            for (int j = 0; j < resultofCourseSelect[i].length; j++) {
+                courseTable.insert(resultofCourseSelect[i][j]);
+            } // for
+        } // for
+        
+        out.println( "Course Table: " + " Number of tuples :" + sizeofCourses);
+        out.println();
+       
+       
+       
+        
         Long time_start, time_end, time_taken;
 
         
@@ -140,24 +163,7 @@ public class TestTupleGenerator
 
         
         //Query 3
-        
-        //Course Table
-        String [] tableCourse = { "Course"};
-        int sizeofCourses = 2000;
-        int tupC[] = new int[]{sizeofCourses};
-        Comparable[][][] resultofCourseSelect = test.generate(tupC);
-        
-        
-        Table courseTable = new Table("Course_Table", "crsCode deptId crsName descry", "Integer Integer String String", "crsCode");
-        for (int i = 0; i < resultofCourseSelect.length; i++) {
-            for (int j = 0; j < resultofCourseSelect[i].length; j++) {
-                courseTable.insert(resultofCourseSelect[i][j]);
-            } // for
-        } // for
-        
-        out.println( "Course Table: " + " Number of tuples :" + sizeofCourses);
-        out.println();
-       
+   
 
 
     } // main
