@@ -141,7 +141,7 @@ public class TestTupleGenerator
         
         //Query 3
         
-        //Student Table
+        //Course Table
         String [] tableCourse = { "Course"};
         int sizeofCourses = 2000;
         int tupC[] = new int[]{sizeofCourses};
